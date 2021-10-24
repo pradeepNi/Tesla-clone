@@ -1,20 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
-
 function Home() {
   return (
     <Component>
       <Section
         title="Model s"
         backgroundImage="model-s.jpg"
-        description="Order Online for Touchless Delivery"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
-      />
-      <Section
-        title="Model y"
-        backgroundImage="model-y.jpg"
         description="Order Online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
@@ -29,6 +21,13 @@ function Home() {
       <Section
         title="Model x"
         backgroundImage="model-x.jpg"
+        description="Order Online for Touchless Delivery"
+        leftBtnText="Custom Order"
+        rightBtnText="Existing Inventory"
+      />
+      <Section
+        title="Model y"
+        backgroundImage="model-y.jpg"
         description="Order Online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"

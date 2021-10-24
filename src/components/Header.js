@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
+
 function Header() {
   const [sidebarStatus, setSidebarStatus] = useState(false);
+  const cars = useSelector(selectCars);
+  console.log(cars);
   return (
     <NavBar>
       <Logo>
@@ -12,10 +17,12 @@ function Header() {
         </a>
       </Logo>
       <NavMenu>
-        <a href="">Model s</a>
-        <a href="">Model 3</a>
-        <a href="">Model x</a>
-        <a href="">Model y</a>
+        {cars &&
+          cars.map((car, index) => (
+            <a key={index} href="">
+              {car}
+            </a>
+          ))}
       </NavMenu>
       <NavBtn>
         <a href="/">Shop</a>
@@ -27,18 +34,12 @@ function Header() {
           <CustomCloseIcon onClick={() => setSidebarStatus(false)} />
         </CloseWrapper>
 
-        <li>
-          <a href="#">item 1</a>
-        </li>
-        <li>
-          <a href="#">item 2</a>
-        </li>
-        <li>
-          <a href="#">item 3</a>
-        </li>
-        <li>
-          <a href="#">item 4</a>
-        </li>
+        {cars &&
+          cars.map((car, index) => (
+            <li key={index}>
+              <a href="">{car}</a>
+            </li>
+          ))}
         <li>
           <a href="#">item 5</a>
         </li>
